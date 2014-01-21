@@ -2,6 +2,11 @@
 Good Practice in OpenStack Code
 ===============================
 
+Author
+======
+
+Dongliang Yu <yudl.nju@gmail.com>
+
 Imports
 ========
 
@@ -211,3 +216,13 @@ The 'bug' line can reference a bug in a few ways. Gerrit creates a link to the b
 
 Once you use ‘git review’, two lines will be appended to the commit message: a blank line followed by a ‘Change-Id’. This is important to correlate this commit with a specific review in Gerrit, and it should not be modified.
 
+Reference
+=========
+
+* http://docs.openstack.org/developer/hacking/
+
+* http://www.python.org/dev/peps/pep-0008/
+
+* http://docs.openstack.org/developer/nova/devref/unit_tests.html
+
+* https://wiki.openstack.org/wiki/GitCommitMessages
