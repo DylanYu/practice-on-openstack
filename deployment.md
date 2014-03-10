@@ -14,12 +14,14 @@ RDO
 
 RDO是由RedHat公司推出的部署OpenStack集群的一个基于**Puppet**的部署工具，可以很快地通过RDO部署一套复杂的OpenStack环境。
 
-对于RDO的使用，陈沙克有过几篇博客：
-[CentOS 6.4 Openstack Havana 多节点安装（OVS+VLAN）](http://www.chenshake.com/centos-6-4-openstack-havana-multinode-installation/)
+对于RDO的使用，陈沙克有过两篇博客：
+[CentOS 6.4 Openstack Havana 多节点安装（OVS+VLAN）](http://www.chenshake.com/centos-6-4-openstack-havana-multinode-installation/), 
 [CentOS 6.4 Openstack Havana 多节点安装（OVS+GRE）](http://www.chenshake.com/how-node-installation-centos-6-4-openstack-havana-ovsgre/)
-另有一篇CSDN上的：
+
+另有一篇CSDN上的： 
 [RDO部署多节点OpenStack Havana(OVS+GRE)](http://blog.csdn.net/tiger435/article/details/16844155)
-以及官方文档：
+
+以及官方文档： 
 [GettingStartedHavana w GRE](http://openstack.redhat.com/GettingStartedHavana_w_GRE)
 
 从这些文章的介绍看，使用RDO部署OpenStack集群是快捷简便的事，我们只需提前设置好机器的网卡，修改几行配置文件，经过10-15分钟就可以自动配置完成一个OpenStack多节点集群，增加Compute节点也是[很简单的事](http://openstack.redhat.com/Adding_a_compute_node)，增加新机器的IP至原配置文件，重新运行之前的配置过程就可以进行快速部署。
