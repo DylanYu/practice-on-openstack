@@ -47,7 +47,7 @@ Fuel包括了裸机部署（采用HP的Cobbler）和配置管理（采用Puppet�
 Puppet
 ------
 
-Puppet是一个开源的软件自动化配置和部署工具，它使用简单且功能强大，很多大型IT公司均在使用puppet对集群中的软件进行管理和部署。
+Puppet是开源的基于Ruby的软件自动化配置和部署工具，它使用简单且功能强大，很多大型IT公司均在使用puppet对集群中的软件进行管理和部署。
 
 ![Puppet架构图](http://dongxicheng.org/wp-content/uploads/2011/05/infrastructure.jpg)
 
@@ -60,10 +60,20 @@ StackForge维护了专门的[puppet module for OpenStack](https://wiki.openstack
 SaltStack
 ---------
 
+SaltStack是一个新的基础平台管理工具, 操作方便， 扩展性足以支撑管理上万台服务器。经常被描述为 [Func](https://fedorahosted.org/func/)加强版+Puppet精简版。SaltStack开始于2011年，是一个相对较新的项目，但在系统管理员和DevOps工程师中拥有越来越多的粉丝。
+
+SaltStack包含配置管理，自动部署和远程命令执行，基于Python编写，官方提供的states很多，也可以自己编写module。SaltStack被誉为运维领域的希望之星。
+
 [Using salt to install OpenStack on Ubuntu 12.04.2](https://github.com/EntropyWorks/salt-openstack)
 
 Chef
 ----
+
+Chef开始于2008年，在大的概念上和Puppet类似，但在实际操作时有很多差异。
+
+Chef将用户写的系统管理脚本称作“菜谱”（recipe），Chef以用户规定的顺序来执行菜谱中定义的任务，默认情况下，如果出现问题导致任务无法完成，Chef报错并退出运行。这是想对于Puppet的提升。此外，Chef使用基于Ruby的DSL（Domain Specific Language）来作为“菜谱”脚本中的语言，对于更加倾向于运维的工程师，这种DSL通俗易懂，而对于更加倾向于软件开发的工程师，则可以使用Ruby来扩展“菜谱”的功能。
+
+在UI和操作方面Chef没有Puppet成熟，在reporting等feature上缺乏亮点。由于对Ruby的依赖性，适合以开发为核心的基础设施部署。
 
 [Chef for OpenStack Overview](https://www.openstack.org/summit/portland-2013/session-videos/presentation/chef-for-openstack-overview/)
 
@@ -78,7 +88,20 @@ Discussion
 
 Fuel (以及跳票的[UOS](http://www.ustack.com/product/)) 是高度定制的厂商发行版，如果不需要做二次开发，使用这些定制版本无疑是最便捷且有保障的选择。
 
-考虑到我们不是部署后直接使用，而是要在现有OpenStack社区版基础上进行开发，使用厂商发行版不应该是我们的部署方案。我们需要在部署和使用过程中获得完全的控制权。
+考虑到我们不是部署后直接使用，而是要在现有OpenStack社区版基础上进行开发，使用厂商发行版(Fuel, UOS)不应该是我们的部署方案。我们需要在部署和使用过程中获得完全的控制权。
 
-RDO是RedHat对使用Puppet部署OpenStack的一个高度封装，用户不需要学习Puppet的复杂操作，可以直接进行傻瓜式操作。从实际效果而言，选择RDO是目前配置通用OpenStack集群的最佳选择，对于我们而言，需要改变的只是物理集群的操作系统(Ubuntu -> RedHat)。
+RDO是RedHat针对使用Puppet部署OpenStack的一个高度封装，用户不需要学习Puppet的复杂操作，可以直接进行傻瓜式部署。从实际效果而言，选择RDO是目前配置通用OpenStack集群的最佳选择，对于我们而言，需要改变的只是物理集群的操作系统(Ubuntu -> RedHat)。
+
+Puppet的影响力大，特别是在国内，运维领域几乎都是Puppet的天下，相关技术积累和分享也更多。对于新手而言Puppet学习曲线长，不适合简单使用，但由于资料和文档完善，可以相应弥补这方面的问题。
+
+对于OpenStack项目而言，SaltStack的天然优势在于两者都是基于Python的，这对于我们熟悉和二次开发很有帮助。在使用上，SaltStack同时包括了部署和远程命令，Python的开发库要比基于Ruby的运维工具更多。从长远看，SaltStack大有一统天下之势（[@roxit](http://weibo.com/srox) 语）。其劣势在于社区年轻，文档少，相关技术分享缺乏（和当年的OpenStack很像？）。
+
+与前两者比较，在OpenStack项目上，Chef显得优势并不明显。Puppet在使用范围和技术成熟度上独占鳌头，在使用性（语言，功能）和未来发展趋势上，新晋的SaltStack似乎更具潜力。
+
+InfoWorld上针对几种流行运维工具有如下[测评结果](http://www.infoworld.com/d/data-center/review-puppet-vs-chef-vs-ansible-vs-salt-231308)：
+
+![Puppet vs. Chef vs. Ansible vs. Salt](http://i57.tinypic.com/28ai8nr.png)
+
+
+*TO BE CONTINUED*
 
