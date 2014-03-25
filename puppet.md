@@ -7,3 +7,8 @@ wrong with your *space*. If that, cat your /proc/sys/kernel/shmall, and double (
 $ sysctl -w kernel.shmall=VALUE
 
 Good luck!
+
+---------------------------------
+
+Another problem with *GPG error*, solve with:
+#  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys YOUR_KEY
