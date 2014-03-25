@@ -6,9 +6,13 @@ wrong with your *space*. If that, cat your /proc/sys/kernel/shmall, and double (
 
 $ sysctl -w kernel.shmall=VALUE
 
-Good luck!
 
 ---------------------------------
 
 Another problem with *GPG error*, solve with:
 #  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys YOUR_KEY
+
+-------------------------
+
+When configuring HOSTNAME in puppet, we MUST provide domain name. That is, *master* is not enough, 
+*master.example.com* is correct.
