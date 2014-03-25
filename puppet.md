@@ -21,3 +21,17 @@ Troubleshooting of Puppet Installation
 
   When configuring HOSTNAME in puppet, we MUST provide domain name. That is, *master* is not enough, 
   *master.example.com* will be correct.
+
+* Enable TCP ports
+
+  For Puppet Enterprise, all traffic on TCP ports 8140, 61613 and 443 should be allowed, you may set
+  iptable rules to enable them with
+
+      $ sudo iptables -A INPUT -p tcp --dport 8140 -j ACCEPT
+
+  To be perfectly safe, you should close the system firewall (or properly config it). At ubuntu, use
+
+      $ sudo ufw disable
+
+  This may be a crux problem if your system isn't a newly installed one.
+
