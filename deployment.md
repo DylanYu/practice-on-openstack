@@ -57,6 +57,14 @@ puppet是基于c/s架构的。服务器端保存着所有对客户端服务器�
 
 StackForge维护了专门的[puppet module for OpenStack](https://wiki.openstack.org/wiki/Puppet-openstack).
 
+*以下内容摘自[UnitedStack](http://www.ustack.com/blog/)*
+
+* Puppet在openstack的占有率
+
+  ![占有率](http://www.ustack.com/wp-content/uploads/2013/11/puppet.jpg)
+
+  Puppet在Openstack部署工具的占有率上遥遥领先，排名第四的packstack的后端也是直接使用了puppet-openstack的module。而且第二名还是devstack，这个仅适用于开发和测试环境，如果纯是严肃的生产环境，puppet的占有率会更高。
+
 SaltStack
 ---------
 
