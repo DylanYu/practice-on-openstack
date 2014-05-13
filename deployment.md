@@ -79,7 +79,7 @@ Chef
 
 Chef开始于2008年，在大的概念上和Puppet类似，但在实际操作时有很多差异。
 
-Chef将用户写的系统管理脚本称作“菜谱”（recipe），Chef以用户规定的顺序来执行菜谱中定义的任务，默认情况下，如果出现问题导致任务无法完成，Chef报错并退出运行。这是想对于Puppet的提升。此外，Chef使用基于Ruby的DSL（Domain Specific Language）来作为“菜谱”脚本中的语言，对于更加倾向于运维的工程师，这种DSL通俗易懂，而对于更加倾向于软件开发的工程师，则可以使用Ruby来扩展“菜谱”的功能。
+Chef将用户写的系统管理脚本称作“菜谱”（recipe），Chef以用户规定的顺序来执行菜谱中定义的任务，默认情况下，如果出现问题导致任务无法完成，Chef报错并退出运行。这是相对于Puppet的提升。此外，Chef使用基于Ruby的DSL（Domain Specific Language）来作为“菜谱”脚本中的语言，对于更加倾向于运维的工程师，这种DSL通俗易懂，而对于更加倾向于软件开发的工程师，则可以使用Ruby来扩展“菜谱”的功能。
 
 在UI和操作方面Chef没有Puppet成熟，在reporting等feature上缺乏亮点。由于对Ruby的依赖性，适合以开发为核心的基础设施部署。
 
